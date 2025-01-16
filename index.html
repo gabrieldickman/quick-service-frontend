@@ -34,7 +34,13 @@
                 placeholder="Insira o contrato do cliente para buscar informações..."
               />
               <div class="d-grid mt-2">
-                <button class="btn btn-primary" type="button">Buscar</button>
+                <button
+                  class="btn btn-primary"
+                  type="submit"
+                  id="buscar_cliente"
+                >
+                  Buscar
+                </button>
               </div>
             </div>
             <div class="form-group">
@@ -123,7 +129,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="planoCliente"
+                id="plano_cliente"
                 placeholder="Plano do Cliente"
               />
             </div>
@@ -132,7 +138,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="loginPppoe"
+                id="login_pppoe"
                 placeholder="Login"
               />
             </div>
@@ -141,7 +147,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="senhaPppoe"
+                id="senha_pppoe"
                 placeholder="Senha"
               />
             </div>
@@ -175,17 +181,23 @@
             <form>
               <div class="row">
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="OLT" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="OLT"
+                    id="nome_olt"
+                  />
                 </div>
                 <div class="col">
                   <input
                     type="number"
                     class="form-control"
                     placeholder="Slot"
+                    id="slot"
                   />
                 </div>
                 <div class="col">
-                  <input type="number" class="form-control" placeholder="Pon" />
+                  <input type="number" class="form-control" placeholder="Pon" id="pon"/>
                 </div>
               </div>
               <div class="row mt-3">
@@ -194,6 +206,7 @@
                     type="text"
                     class="form-control"
                     placeholder="MAC Equipamento"
+                    id="mac_equipamento"
                   />
                 </div>
                 <div class="col">
@@ -548,9 +561,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -560,9 +571,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -597,9 +606,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -609,9 +616,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -646,9 +651,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -658,9 +661,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -732,9 +733,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -744,9 +743,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -783,9 +780,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -795,9 +790,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -832,9 +825,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -844,9 +835,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -881,9 +870,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -893,9 +880,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -967,9 +952,7 @@
                     value="option1"
                     checked
                   />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Não</label
-                  >
+                  <label class="form-check-label" for="inlineRadio1">Não</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -979,9 +962,7 @@
                     id="inlineRadio2"
                     value="option2"
                   />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >De</label
-                  >
+                  <label class="form-check-label" for="inlineRadio2">De</label>
                 </div>
                 <div class="form-check form-check-inline">
                   <input
@@ -1001,10 +982,11 @@
         </div>
 
         <div class="text-end mt-3">
-          <button class="btn btn-primary" type="button">Gerar atendimento</button>
+          <button class="btn btn-primary" type="button">
+            Gerar atendimento
+          </button>
           <button class="btn btn-danger" type="button">Limpar</button>
         </div>
-
       </div>
     </main>
     <!-- CORPO - INFORMAÇÕES DO ATENDIMENTO - FIM -->

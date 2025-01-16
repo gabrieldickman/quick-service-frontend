@@ -15,17 +15,18 @@
   <body>
     <!-- CABEÇALHO - CAMPOS DE BUSCA -->
     <header>
-      <div class="container mt-4">
+      <div class="container mt-4" id="titulo_pagina">
         <p class="h3 text-center">ATENDIMENTO</p>
       </div>
     </header>
 
-    <!-- CORPO - INFORMAÇÕES DO ATENDIMENTO - COMEÇO -->
+    <!-- CORPO - INFORMAÇÕES GERAIS - COMEÇO -->
     <main>
       <div class="container-fluid mt-4 mb-4">
-        <div class="container">
-          <!-- INPUTS DE BUSCA - COMEÇO -->
+        <!-- INPUTS DE BUSCA - COMEÇO -->
+        <div class="container busca_cliente">
           <form>
+            <!-- BUSCAR CLIENTE -->
             <div class="form-group mb-3">
               <input
                 type="number"
@@ -43,6 +44,37 @@
                 </button>
               </div>
             </div>
+
+            <!-- MODAL TABELA DE CLIENTES RETORNADOS - COMEÇO -->
+            <dialog id="tabela_clientes">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="title">Selecione o cliente que está atendendo:</h5>
+                </div>
+
+                <div class="modal-body">
+                  <ul class="modal-items">
+                    <li class="modal-item">
+                      <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                          <label class="col-form-label" id="cliente"
+                            >1234 - FULANO CICLANO BELTRANO DE LIMA</label
+                          >
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="btn btn-primary">
+                            Selecionar
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </dialog>
+            <!-- MODAL TABELA DE CLIENTES RETORNADOS - FIM -->
+
+            <!-- BUSCAR ATENDIMENTO -->
             <div class="form-group">
               <input
                 type="text"
@@ -55,938 +87,1018 @@
               </div>
             </div>
           </form>
-
-          <!-- INPUTS DE BUSCA - FIM -->
         </div>
+        <!-- INPUTS DE BUSCA - FIM -->
 
-        <div class="container mt-4 mb-4">
-          <p class="h5 text-center">INFORMAÇÕES DO ATENDIMENTO</p>
-        </div>
+        <section class="informacoes_atendimento">
+          <div class="container mt-4 mb-4">
+            <p class="h5 text-center">INFORMAÇÕES DO ATENDIMENTO</p>
+          </div>
 
-        <div class="container">
-          <form>
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="nomeAtendente"
-                placeholder="Nome do Atendente"
-              />
-            </div>
-
-            <div class="form-group mb-3">
-              <div class="input-group data" id="datepicker">
+          <div class="container">
+            <form>
+              <div class="form-group mb-3">
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="Data do atendimento"
+                  id="nomeAtendente"
+                  placeholder="Nome do Atendente"
                 />
               </div>
-            </div>
 
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="protocoloAtendimento"
-                placeholder="Protocolo do Atendimento"
-              />
-            </div>
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="contatante"
-                placeholder="Nome de quem entrou em contato"
-              />
-            </div>
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="telefone"
-                placeholder="Telefone de quem entrou em contato"
-              />
-            </div>
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="titular"
-                placeholder="Nome do titular"
-              />
-            </div>
-          </form>
-        </div>
-
-        <div class="container mt-4 mb-4">
-          <p class="h5 text-center">INFORMAÇÕES DO CLIENTE</p>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="plano_cliente"
-                placeholder="Plano do Cliente"
-              />
-            </div>
-
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="login_pppoe"
-                placeholder="Login"
-              />
-            </div>
-
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="senha_pppoe"
-                placeholder="Senha"
-              />
-            </div>
-            <div class="form-group mb-3">
-              <label for="selectExample">Rede LAN</label>
-              <select class="form-select" id="selectExample">
-                <option value="">Selecione</option>
-                <option value="">ONT ZTE</option>
-                <option value="">ONT STAVIX</option>
-                <option value="">ONU STAVIX</option>
-                <option value="">ONU STAVIX + ROTEADOR TP-LINK</option>
-                <option value="">ONU STAVIX + ROTEADOR GREATEK</option>
-                <option value="">ONU STAVIX + ROTEADOR DLINK</option>
-                <option value="">ONU STAVIX + ROTEADOR INTELBRAS</option>
-                <option value="">ONU FIBERHOME</option>
-                <option value="">ONU FIBERHOME + ROTEADOR TP-LINK</option>
-                <option value="">ONU FIBERHOME + ROTEADOR GREATEK</option>
-                <option value="">ONU FIBERHOME + ROTEADOR DLINK</option>
-                <option value="">ONU FIBERHOME + ROTEADOR INTELBRAS</option>
-              </select>
-            </div>
-          </form>
-        </div>
-
-        <div class="container mt-4 mb-4">
-          <p class="h5 text-center">INFORMAÇÕES DO CONCENTRADOR</p>
-        </div>
-
-        <div class="container">
-          <form>
-            <form>
-              <div class="row">
-                <div class="col">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="OLT"
-                    id="nome_olt"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="Slot"
-                    id="slot"
-                  />
-                </div>
-                <div class="col">
-                  <input type="number" class="form-control" placeholder="Pon" id="pon"/>
-                </div>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="protocoloAtendimento"
+                  placeholder="Protocolo do Atendimento"
+                />
               </div>
-              <div class="row mt-3">
-                <div class="col">
+
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contatante"
+                  placeholder="Nome de quem entrou em contato"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefone"
+                  placeholder="Telefone de quem entrou em contato"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="titular"
+                  placeholder="Nome do titular"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <div class="input-group data" id="datepicker">
                   <input
                     type="text"
                     class="form-control"
-                    placeholder="MAC Equipamento"
-                    id="mac_equipamento"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="number"
-                    class="form-control"
-                    placeholder="Sinal da Fibra"
+                    placeholder="Data do atendimento"
                   />
                 </div>
               </div>
             </form>
-          </form>
-        </div>
+          </div>
+        </section>
 
-        <div class="container mt-4 mb-4">
-          <p class="h5 text-center">INFORMAÇÕES DO CHAMADO</p>
-        </div>
+        <section class="informacoes_cliente">
+          <div class="container mt-4 mb-4">
+            <p class="h5 text-center">INFORMAÇÕES DO CLIENTE</p>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="plano_cliente"
+                  placeholder="Plano do Cliente"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="login_pppoe"
+                  placeholder="Login"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="senha_pppoe"
+                  placeholder="Senha"
+                />
+              </div>
+              <div class="form-group mb-3">
+                <label for="selectExample">Rede LAN</label>
+                <select class="form-select" id="selectExample">
+                  <option value="">Selecione</option>
+                  <option value="">ONT ZTE</option>
+                  <option value="">ONT STAVIX</option>
+                  <option value="">ONU STAVIX</option>
+                  <option value="">ONU STAVIX + ROTEADOR TP-LINK</option>
+                  <option value="">ONU STAVIX + ROTEADOR GREATEK</option>
+                  <option value="">ONU STAVIX + ROTEADOR DLINK</option>
+                  <option value="">ONU STAVIX + ROTEADOR INTELBRAS</option>
+                  <option value="">ONU FIBERHOME</option>
+                  <option value="">ONU FIBERHOME + ROTEADOR TP-LINK</option>
+                  <option value="">ONU FIBERHOME + ROTEADOR GREATEK</option>
+                  <option value="">ONU FIBERHOME + ROTEADOR DLINK</option>
+                  <option value="">ONU FIBERHOME + ROTEADOR INTELBRAS</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="informacoes_concentrador">
+          <div class="container mt-4 mb-4">
+            <p class="h5 text-center">INFORMAÇÕES DO CONCENTRADOR</p>
+          </div>
+
+          <div class="container">
+            <form>
+              <form>
+                <div class="row">
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="OLT"
+                      id="nome_olt"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Slot"
+                      id="slot"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Pon"
+                      id="pon"
+                    />
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="MAC Equipamento"
+                      id="mac_equipamento"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="Sinal da Fibra"
+                    />
+                  </div>
+                </div>
+              </form>
+            </form>
+          </div>
+        </section>
+
+        <section class="informacoes_chamado">
+          <div class="container mt-4 mb-4">
+            <p class="h5 text-center">INFORMAÇÕES DO CHAMADO</p>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="motivo_chamado"
+                  placeholder="Motivo do chamado"
+                />
+              </div>
+              <div class="form-group">
+                <label for="descricao_atendimento"
+                  >Descrição do atendimento</label
+                >
+                <textarea
+                  class="form-control"
+                  id="descricao_atendimento"
+                  rows="10"
+                >
+                </textarea>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="metodos_aplicados_geral">
+          <div class="container mt-4 mb-4">
+            <p class="h5 text-center">MÉTODOS APLICADOS NO EQUIPAMENTO</p>
+          </div>
+
+          <p class="h5 text-center mb-3">GERAL</p>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Atualização da Firmware:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Não</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Atualização da Firmware:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Não</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Limpeza de MAC:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Não</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado SNTP:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Não</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Setado DNS:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Não</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>UPnP:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Ligado</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Desligado</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Firewall:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Alto</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Médio</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Baixo</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>ALG:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Ligado</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Desligado</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="metodos_aplicados_2g">
+          <p class="h5 text-center mt-3 mb-3">REDE 2.4G</p>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Canal:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Modo:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Largura de Banda:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>SGI:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Ligado</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Desligado</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Encriptação:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="metodos_aplicados_5g">
+          <p class="h5 text-center mt-3 mb-3">REDE 5G</p>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Canal:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Modo:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Largura de Banda:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>SGI:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Ligado</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Desligado</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <p>Alterado Encriptação:</p>
+                </div>
+                <div class="col">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio1"
+                      value="option1"
+                      checked
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Não</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >De</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="inlineRadio2"
+                      value="option2"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Para</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <footer>
+          <div class="text-end mt-3">
+            <button class="btn btn-primary" type="button">
+              Gerar atendimento
+            </button>
+            <button class="btn btn-danger" type="button">Limpar</button>
+          </div>
+        </footer>
 
         <div class="container">
-          <form>
-            <div class="form-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="motivo_chamado"
-                placeholder="Motivo do chamado"
-              />
-            </div>
-            <div class="form-group">
-              <label for="descricao_atendimento"
-                >Descrição do atendimento</label
-              >
-              <textarea
-                class="form-control"
-                id="descricao_atendimento"
-                rows="10"
-              >
-              </textarea>
-            </div>
-          </form>
+          <p><small>Desenvolvido por Gabriel Dickman.</small></p>
         </div>
 
-        <div class="container mt-4 mb-4">
-          <p class="h5 text-center">MÉTODOS APLICADOS NO EQUIPAMENTO</p>
-        </div>
-
-        <p class="h5 text-center mb-3">GERAL</p>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Atualização da Firmware:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Sim</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">Não</label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Atualização da Firmware:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Sim</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">Não</label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Limpeza de MAC:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Sim</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">Não</label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado SNTP:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Sim</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">Não</label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Setado DNS:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Sim</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">Não</label>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>UPnP:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Ligado</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Desligado</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Firewall:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Alto</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Médio</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Baixo</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>ALG:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Ligado</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Desligado</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <p class="h5 text-center mt-3 mb-3">REDE 2.4G</p>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Canal:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Modo:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Largura de Banda:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>SGI:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Ligado</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Desligado</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Encriptação:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <p class="h5 text-center mt-3 mb-3">REDE 5G</p>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Canal:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Modo:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Largura de Banda:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>SGI:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Ligado</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Desligado</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="container">
-          <form>
-            <div class="row">
-              <div class="col">
-                <p>Alterado Encriptação:</p>
-              </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                    checked
-                  />
-                  <label class="form-check-label" for="inlineRadio1">Não</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2">De</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio2"
-                    value="option2"
-                  />
-                  <label class="form-check-label" for="inlineRadio2"
-                    >Para</label
-                  >
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="text-end mt-3">
-          <button class="btn btn-primary" type="button">
-            Gerar atendimento
-          </button>
-          <button class="btn btn-danger" type="button">Limpar</button>
-        </div>
       </div>
     </main>
     <!-- CORPO - INFORMAÇÕES DO ATENDIMENTO - FIM -->

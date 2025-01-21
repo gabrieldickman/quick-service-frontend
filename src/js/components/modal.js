@@ -1,4 +1,5 @@
 import { searchClientInfos } from "../services/fetchClientInfos";
+import { getPlanoClient } from "../services/fetchPlanoCliente";
 import { formatConnectionString } from "../utils/formatConnectionInterface";
 import { showWarning } from "./modalWarning";
 const searchButton = document.querySelector("#buscar_cliente");
@@ -55,11 +56,15 @@ export function openModal(e) {
 }
 
 function populateFields(login) {
-  document.querySelector("#plano_cliente").value = login.id_contrato;
+  
   document.querySelector("#login_pppoe").value = login.login;
   document.querySelector("#senha_pppoe").value = login.senha;
-
+  
   const partes = formatConnectionString(login.conexao);
+
+  getPlanoClient(login.id_contrato).then((planoCliente) =>{
+    document.querySelector("#plano_cliente").value = planoCliente;
+  })
 
   if (partes.length === 4) {
     document.querySelector("#mac_equipamento").value = partes[0].trim();

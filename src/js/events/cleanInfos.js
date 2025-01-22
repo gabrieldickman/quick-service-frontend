@@ -1,3 +1,5 @@
+import { showNotification } from "../components/cleanNotification";
+
 export function cleanInfos(cleanInfo){
   cleanInfo.addEventListener("click", (e) => {
     e.preventDefault();
@@ -23,18 +25,6 @@ export function cleanInfos(cleanInfo){
 
     document.querySelector("#motivo-do-chamado").value = "";
     document.querySelector("#descricao_atendimento").value = "";
-
-    function showNotification() {
-      const main = document.querySelector(".body");
-      const span = document.createElement("span");
-      span.setAttribute("class", "notificacao-campos-limpos");
-      span.innerText = "Os campos foram limpos";
-      main.appendChild(span);
-
-      setTimeout(() => {
-        span.remove();
-      }, 3000);
-    }
     
     showNotification();
   });

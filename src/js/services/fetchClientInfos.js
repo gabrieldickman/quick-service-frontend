@@ -1,4 +1,6 @@
 import axios from "axios";
+import { handleError } from "../errors/handleErrors";
+import { showNotification } from "../components/errorNotification";
 
 export async function searchClientInfos(idContrato) {
   try {
@@ -7,10 +9,11 @@ export async function searchClientInfos(idContrato) {
     );
     return response.data.data;
   } catch (error) {
-    const data = error.response?.data || {};
-    console.error(
-      `Erro ao buscar cliente. Código do erro: ${data.code || "N/A"}, Mensagem: ${data.message || "Erro desconhecido"}`
-    );
-    throw new Error(data.message || "Erro ao buscar cliente");
+    if (error.code === "ERR_NETWORK") {
+      showNotification("O servidor está offline");
+    } else {
+      const errStatus = error.response.status;
+      showNotification(handleError(errStatus));
+    }
   }
 }

@@ -2,7 +2,7 @@
 import { getIdAtendimento } from "../services/fetchIDAtendimento";
 import { formatarTelefone } from "../utils/formatNumber";
 import { formatarData } from "../utils/formatDate";
-import { handleError } from "../errors/handleErrors";
+import { handleError, errorMessage} from "../errors/handleErrors";
 import { showNotification } from "../components/errorNotification";
 import axios from "axios";
 
@@ -14,9 +14,7 @@ searchService.addEventListener("click", (e) => {
 
   getIdAtendimento(protocoloOpa).then((idAtendimento) => {
     getAtendimento(idAtendimento).then((data) => {
-      if(!data) {
-        showNotification("Atendimento não encontrado")
-      }else {
+      if(data){
         const nomeAtendente = document.querySelector("#nome-atendente");
         const protocoloAtendimento = document.querySelector("#protocolo-atendimento");
         const contatante = document.querySelector("#nome-contatante");
@@ -32,6 +30,8 @@ searchService.addEventListener("click", (e) => {
         titular.value = data.nomeDoTitular;
         dataAtendimento.value = formatarData(data.dataDoAtendimento);
         motivoChamado.value = data.motivoDoChamado;
+      }else{
+       console.error("Ocorreu um erro na requisição!")
       }
     });
   });
@@ -45,10 +45,10 @@ async function getAtendimento(idAtendimento) {
     return response.data.data;
   } catch (error) {
     if (error.code === "ERR_NETWORK") {
-      showNotification("O servidor está offline");
+      showNotification(errorMessage[503]);
     } else {
       const errStatus = error.response.status;
-      // showNotification(handleError(errStatus));
+      showNotification(handleError(errStatus));
     }
   }
 }

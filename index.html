@@ -12,7 +12,7 @@
     />
     <title>Quick Service</title>
   </head>
-  <body >
+  <body>
     <!-- CABEÇALHO - CAMPOS DE BUSCA -->
     <header>
       <div class="container mt-4" id="titulo_pagina">
@@ -45,20 +45,18 @@
               </div>
             </div>
 
-            <div class="backdrop-inactivated">
-
-            </div>
+            <div class="backdrop-inactivated"></div>
 
             <!-- MODAL TABELA DE CLIENTES RETORNADOS - COMEÇO -->
             <dialog id="tabela-clientes">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Selecione o cliente que você está atendendo:</h5>
+                  <h5 class="modal-title">
+                    Selecione o cliente que você está atendendo:
+                  </h5>
                 </div>
 
-                <div class="modal-body">
-                  
-                </div>
+                <div class="modal-body"></div>
               </div>
             </dialog>
             <!-- MODAL TABELA DE CLIENTES RETORNADOS - FIM -->
@@ -72,7 +70,13 @@
                 placeholder="Insira o protocolo do OPA para buscar informações..."
               />
               <div class="d-grid mt-2">
-                <button class="btn btn-primary" type="button" id="buscar-id-atendimento">Buscar</button>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  id="buscar-id-atendimento"
+                >
+                  Buscar
+                </button>
               </div>
             </div>
           </form>
@@ -179,21 +183,37 @@
                 />
               </div>
               <div class="form-group mb-3">
-                <label for="selectExample">Rede LAN</label>
-                <select class="form-select" id="selectExample">
-                  <option value="1">Selecione</option>
-                  <option value="2">ONT ZTE</option>
-                  <option value="3">ONT STAVIX</option>
-                  <option value="4">ONU STAVIX</option>
-                  <option value="5">ONU STAVIX + ROTEADOR TP-LINK</option>
-                  <option value="6">ONU STAVIX + ROTEADOR GREATEK</option>
-                  <option value="7">ONU STAVIX + ROTEADOR DLINK</option>
-                  <option value="8">ONU STAVIX + ROTEADOR INTELBRAS</option>
-                  <option value="9">ONU FIBERHOME</option>
-                  <option value="10">ONU FIBERHOME + ROTEADOR TP-LINK</option>
-                  <option value="11">ONU FIBERHOME + ROTEADOR GREATEK</option>
-                  <option value="12">ONU FIBERHOME + ROTEADOR DLINK</option>
-                  <option value="13">ONU FIBERHOME + ROTEADOR INTELBRAS</option>
+                <label for="rede-lan-select">Rede LAN</label>
+                <select class="form-select" id="rede-lan-select">
+                  <option value="Selecione">Selecione</option>
+                  <option value="ont-zte">ONT ZTE</option>
+                  <option value="ont-stavix">ONT STAVIX</option>
+                  <option value="onu-stavix">ONU STAVIX</option>
+                  <option value="onu-stavix-tplink">
+                    ONU STAVIX + ROTEADOR TP-LINK
+                  </option>
+                  <option value="onu-stavix-greatek">
+                    ONU STAVIX + ROTEADOR GREATEK
+                  </option>
+                  <option value="onu-stavix-dlink">
+                    ONU STAVIX + ROTEADOR DLINK
+                  </option>
+                  <option value="onu-stavix-intelbras">
+                    ONU STAVIX + ROTEADOR INTELBRAS
+                  </option>
+                  <option value="onu-fiberhome">ONU FIBERHOME</option>
+                  <option value="onu-fiberhome-tplink">
+                    ONU FIBERHOME + ROTEADOR TP-LINK
+                  </option>
+                  <option value="onu-fiberhome-greatek">
+                    ONU FIBERHOME + ROTEADOR GREATEK
+                  </option>
+                  <option value="onu-fiberhome-dlink">
+                    ONU FIBERHOME + ROTEADOR DLINK
+                  </option>
+                  <option value="onu-fiberhome-intelbras">
+                    ONU FIBERHOME + ROTEADOR INTELBRAS
+                  </option>
                 </select>
               </div>
             </form>
@@ -207,52 +227,50 @@
 
           <div class="container">
             <form>
-              <form>
-                <div class="row">
-                  <div class="col">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="OLT"
-                      id="nome_olt"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="Slot"
-                      id="slot"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="Pon"
-                      id="pon"
-                    />
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="OLT"
+                    id="nome_olt"
+                  />
                 </div>
-                <div class="row mt-3">
-                  <div class="col">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="MAC Equipamento"
-                      id="mac_equipamento"
-                    />
-                  </div>
-                  <div class="col">
-                    <input
-                      type="number"
-                      class="form-control"
-                      placeholder="Sinal da Fibra"
-                      id="sinal-fibra"
-                    />
-                  </div>
+                <div class="col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Slot"
+                    id="slot"
+                  />
                 </div>
-              </form>
+                <div class="col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Pon"
+                    id="pon"
+                  />
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="MAC Equipamento"
+                    id="mac_equipamento"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Sinal da Fibra"
+                    id="sinal-fibra"
+                  />
+                </div>
+              </div>
             </form>
           </div>
         </section>
@@ -306,11 +324,13 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="atualizado-firmware-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label
+                      class="form-check-label"
+                      for="atualizado-firmware-sim"
                       >Sim</label
                     >
                   </div>
@@ -319,47 +339,12 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="atualizado-firmware-nao"
+                      value="nao"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Não</label
-                    >
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <div class="container">
-            <form>
-              <div class="row">
-                <div class="col">
-                  <p>Atualização da Firmware:</p>
-                </div>
-                <div class="col">
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
-                      checked
-                    />
-                    <label class="form-check-label" for="inlineRadio1"
-                      >Sim</label
-                    >
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label
+                      class="form-check-label"
+                      for="atualizado-firmware-nao"
                       >Não</label
                     >
                   </div>
@@ -380,11 +365,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="limpeza-mac-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="limpeza-mac-sim"
                       >Sim</label
                     >
                   </div>
@@ -393,10 +378,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="limpeza-mac-nao"
+                      value="nao"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="limpeza-mac-nao"
                       >Não</label
                     >
                   </div>
@@ -417,11 +402,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="alterado-sntp-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="alterado-sntp"
                       >Sim</label
                     >
                   </div>
@@ -430,10 +415,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="alterado-sntp-nao"
+                      value="nao"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="alterado-sntp-nao"
                       >Não</label
                     >
                   </div>
@@ -454,11 +439,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="setado-dns-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="setad-dns-sim"
                       >Sim</label
                     >
                   </div>
@@ -467,10 +452,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="setado-dns-nao"
+                      value="nao"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="setad-dns-nao"
                       >Não</label
                     >
                   </div>
@@ -491,11 +476,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="habilitado-upnp-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="habilitado-upnp-sim"
                       >Ligado</label
                     >
                   </div>
@@ -504,10 +489,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="habilitado-upnp-nao"
+                      value="nao"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="habilitado-upnp-nao"
                       >Desligado</label
                     >
                   </div>
@@ -528,11 +513,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="firewall-alto"
+                      value="alto"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="firewall-alto"
                       >Alto</label
                     >
                   </div>
@@ -541,10 +526,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="firewall-medio"
+                      value="medio"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="firewall-medio"
                       >Médio</label
                     >
                   </div>
@@ -553,10 +538,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="firewall-baixo"
+                      value="baixo"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="firewall-baixo"
                       >Baixo</label
                     >
                   </div>
@@ -577,23 +562,21 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="alg"
+                      value="ligado"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
-                      >Ligado</label
-                    >
+                    <label class="form-check-label" for="alg">Ligado</label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="alg"
+                      value="desligado"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="desligado"
                       >Desligado</label
                     >
                   </div>
@@ -612,43 +595,58 @@
                 <div class="col">
                   <p>Alterado Canal:</p>
                 </div>
+
                 <div class="col">
-                  <div class="form-check form-check-inline">
+                  <div class="form-check form-check-inline mb-3">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="canal-2g-alterado"
+                      value="nao"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="canal-2g-alterado"
                       >Não</label
                     >
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
+                  <div class="form-check form-check-inline mb-3">
+                    <select class="form-select" id="canal-2g-select-1">
+                      <option value="Selecione">De</option>
+                      <option value="auto">auto</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                    </select>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
-                    >
+                    <select class="form-select" id="canal-2g-select-2">
+                      <option value="Selecione">Para</option>
+                      <option value="auto">auto</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -661,43 +659,36 @@
                 <div class="col">
                   <p>Alterado Modo:</p>
                 </div>
+
                 <div class="col">
-                  <div class="form-check form-check-inline">
+                  <div class="form-check form-check-inline mb-3">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="modo-2g-alterado"
+                      value="nao"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="modo-2g-alterado"
                       >Não</label
                     >
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
+                    <select class="form-select" id="modo-2g-select-1">
+                      <option value="Selecione">De</option>
+                      <option value="1">B/G/N</option>
+                      <option value="2">B/G/N/AC</option>
+                      <option value="3">B/G/N/AC/AX</option>
+                    </select>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
-                    >
+                    <select class="form-select" id="modo-2g-select-2">
+                      <option value="Selecione">De</option>
+                      <option value="1">B/G/N</option>
+                      <option value="2">B/G/N/AC</option>
+                      <option value="3">B/G/N/AC/AX</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -711,42 +702,34 @@
                   <p>Alterado Largura de Banda:</p>
                 </div>
                 <div class="col">
-                  <div class="form-check form-check-inline">
+                  <div class="form-check form-check-inline mb-3">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="largura-2g-alterado"
+                      value="nao"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="largura-2g-alterado"
                       >Não</label
                     >
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
+                    <select class="form-select" id="largura-2g-select-1">
+                      <option value="Selecione">De</option>
+                      <option value="auto">auto</option>
+                      <option value="1">20MHZ</option>
+                      <option value="2">40MHZ</option>
+                    </select>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
-                    >
+                    <select class="form-select" id="largura-2g-select-2">
+                      <option value="Selecione">Para</option>
+                      <option value="auto">auto</option>
+                      <option value="1">20MHZ</option>
+                      <option value="2">40MHZ</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -765,11 +748,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="sgi-2g-ligado"
+                      value="ligado"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="sgi-2g-ligado"
                       >Ligado</label
                     >
                   </div>
@@ -778,10 +761,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="sgi-2g-desligado"
+                      value="desligado"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="sgi-2g-desligado"
                       >Desligado</label
                     >
                   </div>
@@ -802,36 +785,28 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="enctriptacao-2g-alterada-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label
+                      class="form-check-label"
+                      for="enctriptacao-2g-alterada-sim"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="enctriptacao-2g-alterada-nao"
+                      value="nao"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="enctriptacao-2g-alterada-nao"
                       >Não</label
-                    >
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
                     >
                   </div>
                 </div>
@@ -849,43 +824,64 @@
                 <div class="col">
                   <p>Alterado Canal:</p>
                 </div>
+
                 <div class="col">
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="canal-5g-alterado"
+                      value="nao"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="canal-5g-alterado"
                       >Não</label
                     >
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
+                  <div class="form-check form-check-inline mb-3">
+                    <select class="form-select" id="canal-5g-select-1">
+                      <option value="Selecione">De</option>
+                      <option value="auto">auto</option>
+                      <option value="36">36</option>
+                      <option value="40">40</option>
+                      <option value="44">44</option>
+                      <option value="48">48</option>
+                      <option value="52">52</option>
+                      <option value="56">56</option>
+                      <option value="60">60</option>
+                      <option value="64">64</option>
+                      <option value="100">100</option>
+                      <option value="104">104</option>
+                      <option value="108">108</option>
+                      <option value="112">112</option>
+                      <option value="116">116</option>
+                      <option value="120">120</option>
+                      <option value="124">124</option>
+                      <option value="128">128</option>
+                    </select>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
-                    >
+                    <select class="form-select" id="canal-5g-select-2">
+                      <option value="Selecione">Para</option>
+                      <option value="auto">auto</option>
+                      <option value="36">36</option>
+                      <option value="40">40</option>
+                      <option value="44">44</option>
+                      <option value="48">48</option>
+                      <option value="52">52</option>
+                      <option value="56">56</option>
+                      <option value="60">60</option>
+                      <option value="64">64</option>
+                      <option value="100">100</option>
+                      <option value="104">104</option>
+                      <option value="108">108</option>
+                      <option value="112">112</option>
+                      <option value="116">116</option>
+                      <option value="120">120</option>
+                      <option value="124">124</option>
+                      <option value="128">128</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -898,43 +894,36 @@
                 <div class="col">
                   <p>Alterado Modo:</p>
                 </div>
+
                 <div class="col">
                   <div class="form-check form-check-inline">
                     <input
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="modo-5g-alterado"
+                      value="nao"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="modo-5g-alterado"
                       >Não</label
                     >
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
+                  <div class="form-check form-check-inline mb-3">
+                    <select class="form-select" id="modo-5g-select-1">
+                      <option value="Selecione">De</option>
+                      <option value="1">B/G/N</option>
+                      <option value="2">B/G/N/AC</option>
+                      <option value="3">B/G/N/AC/AX</option>
+                    </select>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
-                    >
+                    <select class="form-select" id="modo-5g-select-2">
+                      <option value="Selecione">De</option>
+                      <option value="1">B/G/N</option>
+                      <option value="2">B/G/N/AC</option>
+                      <option value="3">B/G/N/AC/AX</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -953,37 +942,33 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="largura-5g-alterado"
+                      value="nao"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="largura-5g-alterado"
                       >Não</label
                     >
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
+                  <div class="form-check form-check-inline mb-3">
+                    <select class="form-select" id="largura-5g-select-1">
+                      <option value="Selecione">De</option>
+                      <option value="auto">auto</option>
+                      <option value="1">20MHZ</option>
+                      <option value="2">40MHZ</option>
+                      <option value="3">80MHZ</option>
+                      <option value="4">160MHZ</option>
+                    </select>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
-                    >
+                    <select class="form-select" id="largura-5g-select-2">
+                      <option value="Selecione">Para</option>
+                      <option value="auto">auto</option>
+                      <option value="1">20MHZ</option>
+                      <option value="2">40MHZ</option>
+                      <option value="3">80MHZ</option>
+                      <option value="4">160MHZ</option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -1002,11 +987,11 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="sgi-5g-ligado"
+                      value="ligado"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label class="form-check-label" for="sgi-5g-ligado"
                       >Ligado</label
                     >
                   </div>
@@ -1015,10 +1000,10 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
+                      id="sgi-5g-desligado"
+                      value="desligado"
                     />
-                    <label class="form-check-label" for="inlineRadio2"
+                    <label class="form-check-label" for="sgi-5g-desligado"
                       >Desligado</label
                     >
                   </div>
@@ -1039,36 +1024,28 @@
                       class="form-check-input"
                       type="radio"
                       name="inlineRadioOptions"
-                      id="inlineRadio1"
-                      value="option1"
+                      id="enctriptacao-5g-alterada-sim"
+                      value="sim"
                       checked
                     />
-                    <label class="form-check-label" for="inlineRadio1"
+                    <label
+                      class="form-check-label"
+                      for="enctriptacao-5g-alterada-sim"
+                      >Sim</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="enctriptacao-5g-alterada-nao"
+                      value="nao"
+                    />
+                    <label
+                      class="form-check-label"
+                      for="enctriptacao-5g-alterada-nao"
                       >Não</label
-                    >
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >De</label
-                    >
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="inlineRadioOptions"
-                      id="inlineRadio2"
-                      value="option2"
-                    />
-                    <label class="form-check-label" for="inlineRadio2"
-                      >Para</label
                     >
                   </div>
                 </div>
@@ -1079,17 +1056,22 @@
 
         <footer>
           <div class="text-end mt-3">
-            <button class="btn btn-primary" type="button" id="gerar-atenidmento">
+            <button
+              class="btn btn-primary"
+              type="button"
+              id="gerar-atenidmento"
+            >
               Gerar atendimento
             </button>
-            <button class="btn btn-danger" type="button" id="limpar-campos">Limpar</button>
+            <button class="btn btn-danger" type="button" id="limpar-campos">
+              Limpar
+            </button>
           </div>
         </footer>
 
         <div class="container">
           <p><small>Desenvolvido por Gabriel Dickman.</small></p>
         </div>
-
       </div>
     </main>
     <!-- CORPO - INFORMAÇÕES DO ATENDIMENTO - FIM -->

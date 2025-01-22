@@ -9,7 +9,12 @@ export function openModal(e) {
 
   const modal = document.querySelector("#tabela-clientes");
   const bodyModal = document.querySelector(".modal-body");
+  const backdrop = document.querySelector(".backdrop-inactivated");
   modal.show();
+
+  if (modal) {
+    backdrop.setAttribute("class", "backdrop-activated");
+  }
 
   // Verifica se existe uma ul criada e cria uma
   let clientList = bodyModal.querySelector(".lista-de-clientes");
@@ -23,7 +28,7 @@ export function openModal(e) {
 
   const idContrato = document.querySelector("#id_contrato").value;
   if (!idContrato) {
-    showWarning(modal, clientList);
+    showWarning(modal, clientList, backdrop);
   } else {
     searchClientInfos(idContrato).then((data) => {
       // Filtrar clientes com logins "ativo: S"
@@ -38,14 +43,18 @@ export function openModal(e) {
       clientesAtivos.forEach((cliente) => {
         cliente.logins.forEach((login) => {
           const li = document.createElement("li");
-          li.textContent = `Cliente: ${login.login || "Nome Indisponível"}`;
+          const p = document.createElement("p")
+          p.textContent = `Cliente: ${login.login || "Nome Indisponível"}`;
+          li.appendChild(p);
           const button = document.createElement("button");
+          button.setAttribute("class", "btn" + " btn-primary");
           button.textContent = "Selecionar";
 
           button.addEventListener("click", (e) => {
             e.preventDefault();
             populateFields(login);
             modal.close();
+            backdrop.setAttribute("class", "backdrop-inactivated");
           });   
           li.appendChild(button);
           clientList.appendChild(li);

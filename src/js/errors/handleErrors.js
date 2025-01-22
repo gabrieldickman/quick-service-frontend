@@ -1,10 +1,10 @@
 
-const errorMessage = {
-  400: "Requisição inválida.",
+export const errorMessage = {
+  400: "Requisição inválida. Informe um dado para buscar.",
   401: "Token não encontrado. Verifique suas credenciais.",
-  403: "Acesso proibido. Você não tem permissão para acessar este recurso.",
+  403: "Informações inacessíveis. Conecte-se na rede da Brasil Digital",
   404: "Cliente não encontrado.",
-  500: "Erro interno do servidor. Tente novamente mais tarde.",
+  500: "Erro interno. Verifique se o atendimento contém as TAGs necessárias.",
   502: "Bad Gateway. Problema na comunicação com o servidor.",
   503: "Serviço indisponível. O servidor está fora do ar.",
   504: "Gateway Timeout. O servidor demorou para responder.",

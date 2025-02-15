@@ -22,15 +22,22 @@ body {
   box-sizing: border-box;
 }
 
-#tabela-clientes {
+#tabela-clientes, #modal-atendimento{
   z-index: $z-index-table;
 }
 
-.modal-content {
+.atendimento-modal{
+  position: absolute;
+  top: 10rem;
+  left: 40rem;
+  margin: auto;
+}
+
+.modal-content, .modal-atendimento-content{
   @include flexbox(column, null, null, $spacing-unit);
 }
 
-.modal-body {
+.modal-body, .modal-atendimento-content{
   @include flexbox(column, center);
   width: $modal-width;
 }

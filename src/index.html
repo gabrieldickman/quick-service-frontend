@@ -185,33 +185,33 @@
               <div class="form-group mb-3">
                 <label for="rede-lan-select">Rede LAN</label>
                 <select class="form-select" id="rede-lan-select">
-                  <option value="Selecione">Selecione</option>
-                  <option value="ont-zte">ONT ZTE</option>
-                  <option value="ont-stavix">ONT STAVIX</option>
-                  <option value="onu-stavix">ONU STAVIX</option>
-                  <option value="onu-stavix-tplink">
+                  <option value=" ">Selecione</option>
+                  <option value="ONT ZTE">ONT ZTE</option>
+                  <option value="ONT STAVIX">ONT STAVIX</option>
+                  <option value="ONU STAVIX">ONU STAVIX</option>
+                  <option value="ONU STAVIX + ROTEADOR TP-LINK">
                     ONU STAVIX + ROTEADOR TP-LINK
                   </option>
-                  <option value="onu-stavix-greatek">
+                  <option value="ONU STAVIX + ROTEADOR GREATEK">
                     ONU STAVIX + ROTEADOR GREATEK
                   </option>
-                  <option value="onu-stavix-dlink">
+                  <option value="ONU STAVIX + ROTEADOR DLINK">
                     ONU STAVIX + ROTEADOR DLINK
                   </option>
-                  <option value="onu-stavix-intelbras">
+                  <option value="ONU STAVIX + ROTEADOR INTELBRAS">
                     ONU STAVIX + ROTEADOR INTELBRAS
                   </option>
-                  <option value="onu-fiberhome">ONU FIBERHOME</option>
-                  <option value="onu-fiberhome-tplink">
+                  <option value="ONU FIBERHOME">ONU FIBERHOME</option>
+                  <option value="ONU FIBERHOME + ROTEADOR TP-LINK">
                     ONU FIBERHOME + ROTEADOR TP-LINK
                   </option>
-                  <option value="onu-fiberhome-greatek">
+                  <option value="ONU FIBERHOME + ROTEADOR GREATEK">
                     ONU FIBERHOME + ROTEADOR GREATEK
                   </option>
-                  <option value="onu-fiberhome-dlink">
+                  <option value="ONU FIBERHOME + ROTEADOR DLINK">
                     ONU FIBERHOME + ROTEADOR DLINK
                   </option>
-                  <option value="onu-fiberhome-intelbras">
+                  <option value="ONU FIBERHOME + ROTEADOR INTELBRAS">
                     ONU FIBERHOME + ROTEADOR INTELBRAS
                   </option>
                 </select>
@@ -512,7 +512,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="firewall"
                       id="firewall-alto"
                       value="alto"
                       checked
@@ -525,7 +525,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="firewall"
                       id="firewall-medio"
                       value="medio"
                     />
@@ -537,7 +537,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="firewall"
                       id="firewall-baixo"
                       value="baixo"
                     />
@@ -561,8 +561,8 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
-                      id="alg"
+                      name="alg"
+                      id="alg-ligado"
                       value="ligado"
                       checked
                     />
@@ -572,8 +572,8 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
-                      id="alg"
+                      name="alg"
+                      id="alg-desligado"
                       value="desligado"
                     />
                     <label class="form-check-label" for="desligado"
@@ -604,7 +604,6 @@
                       name="inlineRadioOptions"
                       id="canal-2g-alterado"
                       value="nao"
-                      checked
                     />
                     <label class="form-check-label" for="canal-2g-alterado"
                       >Não</label
@@ -612,7 +611,7 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="canal-2g-select-1">
-                      <option value="Selecione">De</option>
+                      <option value=" ">De</option>
                       <option value="auto">auto</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -631,7 +630,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="canal-2g-select-2">
-                      <option value="Selecione">Para</option>
+                      <option value=" ">Para</option>
                       <option value="auto">auto</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -668,7 +667,6 @@
                       name="inlineRadioOptions"
                       id="modo-2g-alterado"
                       value="nao"
-                      checked
                     />
                     <label class="form-check-label" for="modo-2g-alterado"
                       >Não</label
@@ -676,18 +674,18 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="modo-2g-select-1">
-                      <option value="Selecione">De</option>
-                      <option value="1">B/G/N</option>
-                      <option value="2">B/G/N/AC</option>
-                      <option value="3">B/G/N/AC/AX</option>
+                      <option value=" ">De</option>
+                      <option value="B/G/N">B/G/N</option>
+                      <option value="B/G/N/AC">B/G/N/AC</option>
+                      <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
                     </select>
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="modo-2g-select-2">
-                      <option value="Selecione">De</option>
-                      <option value="1">B/G/N</option>
-                      <option value="2">B/G/N/AC</option>
-                      <option value="3">B/G/N/AC/AX</option>
+                      <option value=" ">Para</option>
+                      <option value="B/G/N">B/G/N</option>
+                      <option value="B/G/N/AC">B/G/N/AC</option>
+                      <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
                     </select>
                   </div>
                 </div>
@@ -709,7 +707,6 @@
                       name="inlineRadioOptions"
                       id="largura-2g-alterado"
                       value="nao"
-                      checked
                     />
                     <label class="form-check-label" for="largura-2g-alterado"
                       >Não</label
@@ -717,18 +714,18 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="largura-2g-select-1">
-                      <option value="Selecione">De</option>
+                      <option value=" ">De</option>
                       <option value="auto">auto</option>
-                      <option value="1">20MHZ</option>
-                      <option value="2">40MHZ</option>
+                      <option value="20MHZ">20MHZ</option>
+                      <option value="40MHZ">40MHZ</option>
                     </select>
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="largura-2g-select-2">
-                      <option value="Selecione">Para</option>
+                      <option value="">Para</option>
                       <option value="auto">auto</option>
-                      <option value="1">20MHZ</option>
-                      <option value="2">40MHZ</option>
+                      <option value="20MHZ">20MHZ</option>
+                      <option value="40MHZ">40MHZ</option>
                     </select>
                   </div>
                 </div>
@@ -747,7 +744,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="sgi"
                       id="sgi-2g-ligado"
                       value="ligado"
                       checked
@@ -760,7 +757,7 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="inlineRadioOptions"
+                      name="sgi"
                       id="sgi-2g-desligado"
                       value="desligado"
                     />
@@ -841,7 +838,7 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="canal-5g-select-1">
-                      <option value="Selecione">De</option>
+                      <option value=" ">De</option>
                       <option value="auto">auto</option>
                       <option value="36">36</option>
                       <option value="40">40</option>
@@ -863,7 +860,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="canal-5g-select-2">
-                      <option value="Selecione">Para</option>
+                      <option value=" ">Para</option>
                       <option value="auto">auto</option>
                       <option value="36">36</option>
                       <option value="40">40</option>
@@ -903,7 +900,6 @@
                       name="inlineRadioOptions"
                       id="modo-5g-alterado"
                       value="nao"
-                      checked
                     />
                     <label class="form-check-label" for="modo-5g-alterado"
                       >Não</label
@@ -911,18 +907,18 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="modo-5g-select-1">
-                      <option value="Selecione">De</option>
-                      <option value="1">B/G/N</option>
-                      <option value="2">B/G/N/AC</option>
-                      <option value="3">B/G/N/AC/AX</option>
+                      <option value=" ">De</option>
+                      <option value="B/G/N">B/G/N</option>
+                      <option value="B/G/N/AC">B/G/N/AC</option>
+                      <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
                     </select>
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="modo-5g-select-2">
-                      <option value="Selecione">De</option>
-                      <option value="1">B/G/N</option>
-                      <option value="2">B/G/N/AC</option>
-                      <option value="3">B/G/N/AC/AX</option>
+                      <option value=" ">De</option>
+                      <option value="B/G/N">B/G/N</option>
+                      <option value="B/G/N/AC">B/G/N/AC</option>
+                      <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
                     </select>
                   </div>
                 </div>
@@ -944,7 +940,6 @@
                       name="inlineRadioOptions"
                       id="largura-5g-alterado"
                       value="nao"
-                      checked
                     />
                     <label class="form-check-label" for="largura-5g-alterado"
                       >Não</label
@@ -952,22 +947,22 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="largura-5g-select-1">
-                      <option value="Selecione">De</option>
+                      <option value=" ">De</option>
                       <option value="auto">auto</option>
-                      <option value="1">20MHZ</option>
-                      <option value="2">40MHZ</option>
-                      <option value="3">80MHZ</option>
-                      <option value="4">160MHZ</option>
+                      <option value="20MHZ">20MHZ</option>
+                      <option value="40MHZ">40MHZ</option>
+                      <option value="80MHZ">80MHZ</option>
+                      <option value="160MHZ">160MHZ</option>
                     </select>
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="largura-5g-select-2">
-                      <option value="Selecione">Para</option>
+                      <option value=" ">Para</option>
                       <option value="auto">auto</option>
-                      <option value="1">20MHZ</option>
-                      <option value="2">40MHZ</option>
-                      <option value="3">80MHZ</option>
-                      <option value="4">160MHZ</option>
+                      <option value="20MHZ">20MHZ</option>
+                      <option value="40MHZ">40MHZ</option>
+                      <option value="80MHZ">80MHZ</option>
+                      <option value="160MHZ">160MHZ</option>
                     </select>
                   </div>
                 </div>
@@ -1059,7 +1054,7 @@
             <button
               class="btn btn-primary"
               type="button"
-              id="gerar-atenidmento"
+              id="gerar-atendimento"
             >
               Gerar atendimento
             </button>
@@ -1069,8 +1064,10 @@
           </div>
         </footer>
 
-        <div class="container">
-          <p><small>Desenvolvido por Gabriel Dickman.</small></p>
+        <div class="atendimento-modal">
+          <dialog id="modal-atendimento">
+            <div class="modal-atendimento-content"></div>
+          </dialog>
         </div>
       </div>
     </main>

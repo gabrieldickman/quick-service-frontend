@@ -1,4 +1,4 @@
-import { openModal } from "../components/modal";
+import { openModal } from "../components/clientsModal";
 
 export function attachClientEvents() {
   const searchButton = document.querySelector("#buscar_cliente");

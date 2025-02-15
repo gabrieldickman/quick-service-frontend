@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html', // Caminho para o HTML base
+      template: './src/index.html', // Caminho para o HTML base
       filename: 'index.html',   // Nome do arquivo gerado na pasta dist
     }),
   ],

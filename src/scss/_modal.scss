@@ -31,13 +31,18 @@ body {
   top: 10rem;
   left: 40rem;
   margin: auto;
+
 }
 
-.modal-content, .modal-atendimento-content{
+.modal-atendimento-content{
+  width: 30rem;
+}
+
+.modal-content{
   @include flexbox(column, null, null, $spacing-unit);
 }
 
-.modal-body, .modal-atendimento-content{
+.modal-body{
   @include flexbox(column, center);
   width: $modal-width;
 }

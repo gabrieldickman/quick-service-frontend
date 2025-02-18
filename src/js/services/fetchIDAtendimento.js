@@ -7,7 +7,7 @@ export async function getIdAtendimento(protocolo) {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      `http://localhost:8000/opa/?protocolo=${protocolo}`,{
+      `http://localhost:8000/api/v1/opa/?protocolo=${protocolo}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

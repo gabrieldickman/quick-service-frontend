@@ -42,7 +42,7 @@ async function getAtendimento(idAtendimento) {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      `http://localhost:8000/opa/atendimento/?idAtendimento=${idAtendimento}`,{
+      `http://localhost:8000/api/v1/opa/atendimento/?idAtendimento=${idAtendimento}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -7,7 +7,7 @@ export async function getPlanoClient(planoCliente) {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      `http://localhost:8000/cliente/plano/?idContrato=${planoCliente}`,{
+      `http://localhost:8000/api/v1/cliente/plano/?idContrato=${planoCliente}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -7,7 +7,7 @@ export async function searchClientInfos(idContrato) {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      `http://localhost:8000/cliente/radius/?idCliente=${idContrato}`,{
+      `http://localhost:8000/api/v1/cliente/radius/?idCliente=${idContrato}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -1,23 +1,22 @@
-// Placeholder para estilos compartilhados
-%notificacao-base {
+@mixin notificacao-base($bg-color) {
   position: fixed;
   top: 1rem;
   right: 1rem;
   color: white;
   padding: 1rem;
   width: 20rem;
+  max-width: 90%; 
   font-size: 1.2rem;
   border-radius: 2rem;
   text-align: center;
+  background-color: $bg-color;
+  z-index: 999;
 }
 
-// Estilos para notificações específicas
 .notificacao-campos-limpos {
-  @extend %notificacao-base;
-  background-color: green;
+  @include notificacao-base(green);
 }
 
 .notificacao-erros {
-  @extend %notificacao-base;
-  background-color: red;
+  @include notificacao-base(red);
 }

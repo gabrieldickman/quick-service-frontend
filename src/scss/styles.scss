@@ -1,2 +1,8 @@
 @use './modal';
 @use './notificacao';
+
+#logout-btn{
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}

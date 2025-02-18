@@ -4,8 +4,14 @@ import { showNotification } from "../components/errorNotification";
 
 export async function getPlanoClient(planoCliente) {
   try {
+    const token = localStorage.getItem("token");
+
     const response = await axios.get(
-      `http://localhost:8000/cliente/plano/?idContrato=${planoCliente}`
+      `http://localhost:8000/cliente/plano/?idContrato=${planoCliente}`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     return response.data.data;
   } catch (error) {

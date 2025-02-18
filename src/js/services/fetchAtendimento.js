@@ -39,8 +39,14 @@ searchService.addEventListener("click", (e) => {
 
 async function getAtendimento(idAtendimento) {
   try {
+    const token = localStorage.getItem("token");
+
     const response = await axios.get(
-      `http://localhost:8000/opa/atendimento/?idAtendimento=${idAtendimento}`
+      `http://localhost:8000/opa/atendimento/?idAtendimento=${idAtendimento}`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
     );
     return response.data.data;
   } catch (error) {

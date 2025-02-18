@@ -4,9 +4,14 @@ import { showNotification } from "../components/errorNotification";
 
 export async function searchClientInfos(idContrato) {
   try {
+    const token = localStorage.getItem("token");
+
     const response = await axios.get(
-      `http://localhost:8000/cliente/radius/?idCliente=${idContrato}`
-    );
+      `http://localhost:8000/cliente/radius/?idCliente=${idContrato}`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
     return response.data.data;
   } catch (error) {
     if (error.code === "ERR_NETWORK") {

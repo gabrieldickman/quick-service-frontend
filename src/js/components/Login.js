@@ -1,6 +1,8 @@
 import { login } from "../services/auth.js";
 import { showNotification } from "../components/errorNotification.js"
 
+const backendIp = process.env.REACT_APP_BACKEND_IP || 'localhost:8000';
+
 const renderLogin = () => {
   const container = document.createElement("div");
   container.classList.add("login-container");
@@ -23,7 +25,7 @@ const renderLogin = () => {
     const password = document.getElementById("password").value;
 
     try {
-      const response = await fetch("http://localhost:8000/login", {
+      const response = await fetch(`https://${backendIp}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user: username, password }),

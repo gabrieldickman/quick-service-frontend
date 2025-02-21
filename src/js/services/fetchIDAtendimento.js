@@ -1,13 +1,14 @@
 import axios from "axios";
 import { handleError, errorMessage } from "../errors/handleErrors";
 import { showNotification } from "../components/errorNotification";
+const backendIp = process.env.REACT_APP_BACKEND_IP || 'localhost:8000';
 
 export async function getIdAtendimento(protocolo) {
   try {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      `http://localhost:8000/api/v1/opa/?protocolo=${protocolo}`,{
+      `https://${backendIp}/api/v1/opa/?protocolo=${protocolo}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

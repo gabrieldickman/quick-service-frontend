@@ -5,6 +5,7 @@ import { formatarData } from "../utils/formatDate";
 import { handleError, errorMessage} from "../errors/handleErrors";
 import { showNotification } from "../components/errorNotification";
 import axios from "axios";
+const backendIp = process.env.REACT_APP_BACKEND_IP || 'localhost:8000';
 
 const searchService = document.querySelector("#buscar-id-atendimento");
 
@@ -42,7 +43,7 @@ async function getAtendimento(idAtendimento) {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      `http://localhost:8000/api/v1/opa/atendimento/?idAtendimento=${idAtendimento}`,{
+      `https://${backendIp}/api/v1/opa/atendimento/?idAtendimento=${idAtendimento}`,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

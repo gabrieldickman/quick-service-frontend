@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: './src/js/index.js',
@@ -31,15 +31,20 @@ module.exports = {
       template: './src/index.html', // Caminho para o HTML base
       filename: 'index.html',   // Nome do arquivo gerado na pasta dist
     }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify({
+        REACT_APP_BACKEND_IP: process.env.REACT_APP_BACKEND_IP || 'localhost:8000',
+      }),
+    }),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'), 
+      directory: path.join(__dirname, 'dist'),
     },
     compress: true,
     port: 3000,
     watchFiles: {
-      paths: ['src/**/*', 'index.html'], 
+      paths: ['src/**/*', 'index.html'],
     },
   },
 };

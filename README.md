@@ -39,5 +39,6 @@ Por se tratar de um sistema interno, com uso de dados sensíveis, o Quick Servic
 - ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) 
 
 ### BACK-END
+Este projeto depende do Back-end configurado e rodando para funcionar.
 
 Confira o Back-end do projeto aqui: https://github.com/gabrieldickman/quick-service-backend

@@ -1,4 +1,4 @@
-![image]()
+![image](https://github.com/gabrieldickman/quick-service-frontend/blob/master/src/img/image%201.svg)
 
 # QUICK SERVICE
 Sistema auxiliar de abertura de atendimentos.

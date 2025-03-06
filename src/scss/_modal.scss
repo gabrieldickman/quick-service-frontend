@@ -24,6 +24,7 @@ body {
 
 #tabela-clientes, #modal-atendimento{
   z-index: $z-index-table;
+  border-radius: 1rem;
 }
 
 .atendimento-modal{
@@ -70,4 +71,27 @@ body {
   height: 100%;
   background-color: $backdrop-color;
   z-index: $z-index-backdrop;
+}
+
+
+@media screen and (max-width: 768px) {
+  #tabela-clientes{
+    width: 90%;
+  }
+
+  .modal-body{
+    width: 100%;
+  }
+  .lista-de-clientes{
+    width: 90%;
+  
+  }
+  .lista-de-clientes li{
+    width: 90%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+
+  }
+
 }

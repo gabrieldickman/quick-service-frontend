@@ -1,0 +1,47 @@
+@media screen and (max-width: 520px) {
+  .metodos_aplicados_geral {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .metodos_aplicados_geral
+    > .container:nth-child(8)
+    > form
+    > .row
+    > .col:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .metodos_aplicados_2g,
+  .metodos_aplicados_5g {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .metodos_aplicados_2g > .container > form > .row > .col:nth-child(2),
+  .metodos_aplicados_5g > .container > form > .row > .col:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+  .metodos_aplicados_2g
+    > .container:nth-child(1)
+    > form
+    > .row
+    > .col:nth-child(2),
+  .metodos_aplicados_5g > .container > form > .row > .col:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+  .metodos_aplicados_2g
+    > .container:nth-child(2)
+    > form
+    > .row
+    > .col:nth-child(2),
+  .metodos_aplicados_5g > .container > form > .row > .col:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+}

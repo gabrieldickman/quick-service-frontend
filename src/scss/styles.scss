@@ -2,6 +2,7 @@
 @use './notificacao';
 @use './login';
 @use './form';
+@use './checkboxs';
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -27,7 +28,7 @@ body{
   gap: 1rem 1rem;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 768px){
   .search-client, .search-service-opa{
     display: flex;
     flex-direction: column;

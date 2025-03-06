@@ -1,0 +1,23 @@
+.form-control, .form-select, .form-check-input{
+  background-color: oklch(0.279 0.041 260.031);
+  color: oklch(0.869 0.022 252.894);
+}
+
+.form-control, .form-select, .form-check-input{
+  font-size: 0.8rem; 
+}
+
+.form-control::placeholder{
+  color: oklch(0.869 0.022 252.894);
+  font-size: 0.8rem;
+}
+
+.form-control:hover{
+  background-color: oklch(0.129 0.042 264.695);
+}
+
+.form-control:focus{
+  background-color: oklch(0.129 0.042 264.695);
+  color: oklch(0.869 0.022 252.894);
+
+}

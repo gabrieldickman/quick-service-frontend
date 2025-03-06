@@ -5,8 +5,14 @@
   margin-top: 10rem;
 }
 
-#login-form{
+.login-form{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
+}
+
+.login-form button{
+  width: 100%;
 }

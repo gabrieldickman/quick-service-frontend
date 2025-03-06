@@ -16,7 +16,7 @@
     <!-- CABEÇALHO - CAMPOS DE BUSCA -->
     <header>
       <div class="container mt-4" id="titulo_pagina">
-        <p class="h3 text-center">ATENDIMENTO</p>
+        <p class="h3 text-center text">ATENDIMENTO</p>
         <button id="logout-btn" style="display: none" class="btn btn-danger">Sair</button>
       </div>
     </header>
@@ -28,16 +28,16 @@
         <div class="container busca_cliente">
           <form>
             <!-- BUSCAR CLIENTE -->
-            <div class="form-group mb-3">
+            <div class="form-group mb-3 search-client">
               <input
                 type="number"
                 class="form-control"
                 id="id_contrato"
                 placeholder="Insira o contrato do cliente para buscar informações..."
               />
-              <div class="d-grid mt-2">
+              <div class="d-grid">
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-secondary"
                   type="submit"
                   id="buscar_cliente"
                 >
@@ -63,16 +63,16 @@
             <!-- MODAL TABELA DE CLIENTES RETORNADOS - FIM -->
 
             <!-- BUSCAR ATENDIMENTO -->
-            <div class="form-group">
+            <div class="form-group search-service-opa">
               <input
                 type="text"
                 class="form-control"
                 id="protocolo-opa"
                 placeholder="Insira o protocolo do OPA para buscar informações..."
               />
-              <div class="d-grid mt-2">
+              <div class="d-grid">
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-secondary"
                   type="button"
                   id="buscar-id-atendimento"
                 >
@@ -86,7 +86,7 @@
 
         <section class="informacoes_atendimento">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO ATENDIMENTO</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO ATENDIMENTO</p>
           </div>
 
           <div class="container">
@@ -152,7 +152,7 @@
 
         <section class="informacoes_cliente">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO CLIENTE</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO CLIENTE</p>
           </div>
 
           <div class="container">
@@ -223,7 +223,7 @@
 
         <section class="informacoes_concentrador">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO CONCENTRADOR</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO CONCENTRADOR</p>
           </div>
 
           <div class="container">
@@ -278,7 +278,7 @@
 
         <section class="informacoes_chamado">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO CHAMADO</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO CHAMADO</p>
           </div>
 
           <div class="container">
@@ -291,6 +291,35 @@
                   placeholder="Motivo do chamado"
                 />
               </div>
+              <div class="form-group mb-3">
+                <div class="input-group data" id="datepicker">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Data reservada"
+                    id="data-reservada"
+                  />
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="localizacao"
+                  placeholder="Localização do Cliente"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="alarme-equipamento">Alarme do Equipamento</label>
+                <select class="form-select" id="alarme-equipamento">
+                  <option value=" ">Selecione</option>
+                  <option value="LINK LOSS">LINK LOSS</option>
+                  <option value="DYING GASP">DYING GASP</option>
+                  <option value="BOARD ABORT">BOARD ABORT</option>
+                </select>
+              </div>
+              
               <div class="form-group">
                 <label for="descricao_atendimento"
                   >Descrição do atendimento</label
@@ -299,8 +328,7 @@
                   class="form-control"
                   id="descricao_atendimento"
                   rows="10"
-                >
-                </textarea>
+                ></textarea>
               </div>
             </form>
           </div>
@@ -308,10 +336,10 @@
 
         <section class="metodos_aplicados_geral">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">MÉTODOS APLICADOS NO EQUIPAMENTO</p>
+            <p class="h5 text-center text">MÉTODOS APLICADOS NO EQUIPAMENTO</p>
           </div>
 
-          <p class="h5 text-center mb-3">GERAL</p>
+          <p class="h5 text-center mb-3 text">GERAL</p>
 
           <div class="container">
             <form>
@@ -588,7 +616,7 @@
         </section>
 
         <section class="metodos_aplicados_2g">
-          <p class="h5 text-center mt-3 mb-3">REDE 2.4G</p>
+          <p class="h5 text-center mt-3 mb-3 text">REDE 2.4G</p>
 
           <div class="container">
             <form>
@@ -814,7 +842,7 @@
         </section>
 
         <section class="metodos_aplicados_5g">
-          <p class="h5 text-center mt-3 mb-3">REDE 5G</p>
+          <p class="h5 text-center mt-3 mb-3 text">REDE 5G</p>
 
           <div class="container">
             <form>
@@ -1050,9 +1078,9 @@
         </section>
 
         <footer>
-          <div class="text-end mt-3">
+          <div class="text-end mt-3 ">
             <button
-              class="btn btn-primary"
+              class="btn btn-success"
               type="button"
               id="gerar-atendimento"
             >

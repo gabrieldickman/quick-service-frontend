@@ -30,6 +30,9 @@ SENHA: ${document.querySelector("#senha_pppoe").value}
 [INFORMAÇÕES DO CHAMADO]
 
 MOTIVO DO CHAMADO: ${document.querySelector("#motivo-do-chamado").value}
+DATA RESERVADA: ${document.querySelector("#data-reservada").value}
+LOCALIZAÇÃO DO CLIENTE: ${document.querySelector("#localizacao").value}
+ALARME DO EQUIPAMENTO: ${document.querySelector("#alarme-equipamento").value}
 DESCRIÇÃO DO ATENDIMENTO: ${document.querySelector("#descricao_atendimento").value}
 
 [MÉTODOS APLICADOS NO EQUIPAMENTO]
@@ -44,16 +47,16 @@ FIREWALL: ${document.querySelector('input[name="firewall"]:checked').value.toUpp
 ALG: ${document.querySelector('input[name="alg"]:checked').value.toUpperCase()} 
 
 REDE 2.4G 
-ALTERADO CANAL: ${document.querySelector("#canal-2g-alterado").checked ? "NÃO" : `DE ${document.querySelector("#canal-2g-select-1").value} PARA ${document.querySelector("#canal-2g-select-2").value}`}  
-ALTERADO MODO: ${document.querySelector("#modo-2g-alterado").checked ? "NÃO" : `DE ${document.querySelector("#modo-2g-select-1").value} PARA ${document.querySelector("#modo-2g-select-2").value}`} 
-ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-2g-alterado").checked ? "NÃO" : `DE ${document.querySelector("#largura-2g-select-1").value} PARA ${document.querySelector("#largura-2g-select-2").value}`} 
+ALTERADO CANAL: ${document.querySelector("#canal-2g-alterado").value}
+ALTERADO MODO: ${document.querySelector("#modo-2g-alterado").value}
+ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-2g-alterado").value} 
 ALTERADO SGI: ${document.querySelector("#sgi-2g-ligado").checked ? "LIGADO" : "DESLIGADO"} 
 ALTERADO ENCRIPTAÇÃO: ${document.querySelector("#enctriptacao-2g-alterada-sim").checked ? "SIM" : "NÃO"} 
 
 REDE 5G 
-ALTERADO CANAL: ${document.querySelector("#canal-5g-alterado").checked ? "NÃO" : `DE ${document.querySelector("#canal-5g-select-1").value} PARA ${document.querySelector("#canal-5g-select-2").value}`}  
-ALTERADO MODO: ${document.querySelector("#modo-5g-alterado").checked ? "NÃO" : `DE ${document.querySelector("#modo-5g-select-1").value} PARA ${document.querySelector("#modo-5g-select-2").value}`} 
-ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-5g-alterado").checked ? "NÃO" : `DE ${document.querySelector("#largura-5g-select-1").value} PARA ${document.querySelector("#largura-5g-select-2").value}`} 
+ALTERADO CANAL: ${document.querySelector("#canal-5g-alterado").value}
+ALTERADO MODO: ${document.querySelector("#modo-5g-alterado").value}
+ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-5g-alterado").value}
 ALTERADO SGI: ${document.querySelector("#sgi-5g-ligado").checked ? "LIGADO" : "DESLIGADO"} 
 ALTERADO ENCRIPTAÇÃO: ${document.querySelector("#enctriptacao-5g-alterada-sim").checked ? "SIM" : "NÃO"} 
   
@@ -78,6 +81,10 @@ ALTERADO ENCRIPTAÇÃO: ${document.querySelector("#enctriptacao-5g-alterada-sim"
       backdrop.setAttribute("class", "backdrop-inactivated");     
       navigator.clipboard.writeText(serviceContent).then(() => console.log("Copiado!"));
     });
+
+    document.addEventListener("change", (e) => {
+
+    })
   });
 }
 gerarAtendimento()

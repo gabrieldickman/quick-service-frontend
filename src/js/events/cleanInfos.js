@@ -16,6 +16,8 @@ export function cleanInfos(cleanInfo){
     document.querySelector("#plano_cliente").value = "";
     document.querySelector("#login_pppoe").value = "";
     document.querySelector("#senha_pppoe").value = "";
+    document.querySelector("#rede-lan-select").value = "";
+    
 
     document.querySelector("#nome_olt").value = "";
     document.querySelector("#slot").value = "";

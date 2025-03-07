@@ -1,90 +1,102 @@
-//OPA20251602513
-
 export function gerarAtendimento() {
   const btnGerarAtendimento = document.querySelector("#gerar-atendimento");
 
-  btnGerarAtendimento.addEventListener("click", (e) => {
+  if (!btnGerarAtendimento) {
+    console.error("Botão de gerar atendimento não encontrado!");
+    return;
+  }
+
+  btnGerarAtendimento.addEventListener("click", () => {
     const modal = document.querySelector("#modal-atendimento");
     const backdrop = document.querySelector(".backdrop-inactivated");
     const modalContent = document.querySelector(".modal-atendimento-content");
-    const serviceContent = 
-`[INFORMAÇÕES DO ATENDIMENTO]
 
-ATENDENTE: ${document.querySelector("#nome-atendente").value} 
-DATA DO ATENDIMENTO: ${document.querySelector("#data-atendimento").value} 
-PROTOCOLO: ${document.querySelector("#protocolo-atendimento").value} 
-CONTATANTE: ${document.querySelector("#nome-contatante").value} 
-CONTATO: ${document.querySelector("#telefone").value} 
-TITULAR: ${document.querySelector("#titular").value} 
-
-[INFORMAÇÕES DO CONCENTRADOR]
-
-OLT ${document.querySelector("#nome_olt").value} SLOT ${document.querySelector("#slot").value} PON ${document.querySelector("#pon").value} 
-SINAL DA FIBRA: ${document.querySelector("#sinal-fibra").value} 
-PON DO EQUIPAMENTO: ${document.querySelector("#mac_equipamento").value} 
-REDE LAN: ${document.querySelector("#rede-lan-select").value}
-PLANO: ${document.querySelector("#plano_cliente").value}
-LOGIN: ${document.querySelector("#login_pppoe").value}
-SENHA: ${document.querySelector("#senha_pppoe").value}
-
-[INFORMAÇÕES DO CHAMADO]
-
-MOTIVO DO CHAMADO: ${document.querySelector("#motivo-do-chamado").value}
-DATA RESERVADA: ${document.querySelector("#data-reservada").value}
-LOCALIZAÇÃO DO CLIENTE: ${document.querySelector("#localizacao").value}
-ALARME DO EQUIPAMENTO: ${document.querySelector("#alarme-equipamento").value}
-DESCRIÇÃO DO ATENDIMENTO: ${document.querySelector("#descricao_atendimento").value}
-
-[MÉTODOS APLICADOS NO EQUIPAMENTO]
-
-GERAL 
-ATUALIZAÇÃO DE FIRMWARE: ${document.querySelector("#atualizado-firmware-sim").checked ? "SIM" : "NÃO"} 
-LIMPEZA DE MAC: ${document.querySelector("#limpeza-mac-sim").checked ? "SIM" : "NÃO"} 
-ALTERADO SNTP: ${document.querySelector("#alterado-sntp-sim").checked ? "SIM" : "NÃO"} 
-SETADO DNS: ${document.querySelector("#setado-dns-sim").checked ? "SIM" : "NÃO"} 
-UPnP: ${document.querySelector("#habilitado-upnp-sim").checked ? "LIGADO" : "DESLIGADO"} 
-FIREWALL: ${document.querySelector('input[name="firewall"]:checked').value.toUpperCase()} 
-ALG: ${document.querySelector('input[name="alg"]:checked').value.toUpperCase()} 
-
-REDE 2.4G 
-ALTERADO CANAL: ${document.querySelector("#canal-2g-alterado").value}
-ALTERADO MODO: ${document.querySelector("#modo-2g-alterado").value}
-ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-2g-alterado").value} 
-ALTERADO SGI: ${document.querySelector("#sgi-2g-ligado").checked ? "LIGADO" : "DESLIGADO"} 
-ALTERADO ENCRIPTAÇÃO: ${document.querySelector("#enctriptacao-2g-alterada-sim").checked ? "SIM" : "NÃO"} 
-
-REDE 5G 
-ALTERADO CANAL: ${document.querySelector("#canal-5g-alterado").value}
-ALTERADO MODO: ${document.querySelector("#modo-5g-alterado").value}
-ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-5g-alterado").value}
-ALTERADO SGI: ${document.querySelector("#sgi-5g-ligado").checked ? "LIGADO" : "DESLIGADO"} 
-ALTERADO ENCRIPTAÇÃO: ${document.querySelector("#enctriptacao-5g-alterada-sim").checked ? "SIM" : "NÃO"} 
-  
-`    
-    modal.show()
-
-    if (modal) {
-      backdrop.setAttribute("class", "backdrop-activated");
+    if (!modal || !backdrop || !modalContent) {
+      console.error("Elementos do modal não encontrados!");
+      return;
     }
 
-    modalContent.innerHTML = `${serviceContent.replace(/\n/g, "<br>")}`
+    function getValue(selector, defaultValue = "x") {
+      const element = document.querySelector(selector);
+      return element ? element.value || defaultValue : defaultValue;
+    }
 
-    const buttonCopy = document.createElement("button")
-    buttonCopy.setAttribute("class", "btn" + " btn-primary");
+    function getRadioValue(selector) {
+      const element = document.querySelector(selector);
+      return element && element.checked ? "SIM" : "NÃO";
+    }
+
+    function getCheckedValue(selector, checkedText = "LIGADO", uncheckedText = "DESLIGADO") {
+      const element = document.querySelector(selector);
+      return element && element.checked ? checkedText : uncheckedText;
+    }
+
+    const serviceContent = `
+[INFORMAÇÕES DO ATENDIMENTO]
+ATENDENTE: ${getValue("#nome-atendente")} 
+DATA DO ATENDIMENTO: ${getValue("#data-atendimento")} 
+PROTOCOLO: ${getValue("#protocolo-atendimento")} 
+CONTATANTE: ${getValue("#nome-contatante")} 
+CONTATO: ${getValue("#telefone")} 
+TITULAR: ${getValue("#titular")} 
+
+[INFORMAÇÕES DO CONCENTRADOR]
+OLT ${getValue("#nome_olt")} SLOT ${getValue("#slot")} PON ${getValue("#pon")} 
+SINAL DA FIBRA: ${getValue("#sinal-fibra")} 
+PON DO EQUIPAMENTO: ${getValue("#mac_equipamento")} 
+REDE LAN: ${getValue("#rede-lan-select")}
+PLANO: ${getValue("#plano_cliente")}
+LOGIN: ${getValue("#login_pppoe")}
+SENHA: ${getValue("#senha_pppoe")}
+
+[INFORMAÇÕES DO CHAMADO]
+MOTIVO DO CHAMADO: ${getValue("#motivo-do-chamado")}
+DATA RESERVADA: ${getValue("#data-reservada")}
+LOCALIZAÇÃO DO CLIENTE: ${getValue("#localizacao")}
+ALARME DO EQUIPAMENTO: ${getValue("#alarme-equipamento")}
+DESCRIÇÃO DO ATENDIMENTO: ${getValue("#descricao_atendimento")}
+
+[MÉTODOS APLICADOS NO EQUIPAMENTO]
+GERAL 
+ATUALIZAÇÃO DE FIRMWARE: ${getRadioValue("#atualizado-firmware-sim")} 
+LIMPEZA DE MAC: ${getRadioValue("#limpeza-mac-sim")}
+ALTERADO SNTP: ${getRadioValue("#alterado-sntp-sim")}
+SETADO DNS: ${getRadioValue("#setado-dns-sim")}
+UPnP: ${getCheckedValue("#habilitado-upnp-sim")}
+FIREWALL: ${getValue('input[name="firewall"]:checked', "NÃO INFORMADO").toUpperCase()} 
+ALG: ${getValue('input[name="alg"]:checked', "NÃO INFORMADO").toUpperCase()} 
+
+REDE 2.4G 
+ALTERADO CANAL: ${document.querySelector("#canal-2g-alterado").checked ? "NÃO" : "DE " + document.querySelector("#canal-2g-select-1").value + " PARA " + document.querySelector("#canal-2g-select-2").value}
+ALTERADO MODO: ${document.querySelector("#modo-2g-alterado").checked ? "NÃO" : "DE " + document.querySelector("#modo-2g-select-1").value + " PARA " + document.querySelector("#modo-2g-select-2").value}
+ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-2g-alterado").checked ? "NÃO" : "DE " + document.querySelector("#largura-2g-select-1").value + " PARA " + document.querySelector("#largura-2g-select-2").value}
+ALTERADO SGI: ${getCheckedValue("#sgi-2g-ligado")}
+ALTERADO ENCRIPTAÇÃO: ${getRadioValue("#enctriptacao-2g-alterada-sim")}
+
+REDE 5G 
+ALTERADO CANAL: ${document.querySelector("#canal-5g-alterado").checked ? "NÃO" : "DE " + document.querySelector("#canal-5g-select-1").value + " PARA " + document.querySelector("#canal-5g-select-2").value}
+ALTERADO MODO: ${document.querySelector("#modo-5g-alterado").checked ? "NÃO" : "DE " + document.querySelector("#modo-5g-select-1").value + " PARA " + document.querySelector("#modo-5g-select-2").value}
+ALTERADO LARGURA DA BANDA: ${document.querySelector("#largura-5g-alterado").checked ? "NÃO" : "DE " + document.querySelector("#largura-5g-select-1").value + " PARA " + document.querySelector("#largura-5g-select-2").value}
+ALTERADO SGI: ${getCheckedValue("#sgi-5g-ligado")}
+ALTERADO ENCRIPTAÇÃO: ${getRadioValue("#enctriptacao-5g-alterada-sim")}
+`;
+    modal.show();
+    backdrop.classList.replace("backdrop-inactivated", "backdrop-activated");
+
+    modalContent.innerHTML = serviceContent.replace(/\n/g, "<br>");
+
+    const buttonCopy = document.createElement("button");
+    buttonCopy.className = "btn btn-primary";
     buttonCopy.textContent = "Copiar";
-    modalContent.appendChild(buttonCopy)
+    modalContent.appendChild(buttonCopy);
 
-
-    buttonCopy.addEventListener("click", (e)=>{
+    buttonCopy.addEventListener("click", (e) => {
       e.preventDefault();
-      modal.close()
-      backdrop.setAttribute("class", "backdrop-inactivated");     
       navigator.clipboard.writeText(serviceContent).then(() => console.log("Copiado!"));
+      modal.close();
+      backdrop.classList.replace("backdrop-activated", "backdrop-inactivated");
     });
-
-    document.addEventListener("change", (e) => {
-
-    })
   });
 }
-gerarAtendimento()
+
+gerarAtendimento();

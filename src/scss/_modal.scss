@@ -5,7 +5,12 @@ $backdrop-color: rgba(0, 0, 0, 0.5);
 $z-index-backdrop: 1;
 $z-index-table: 100;
 
-@mixin flexbox($direction: row, $align: stretch, $justify: flex-start, $gap: 0) {
+@mixin flexbox(
+  $direction: row,
+  $align: stretch,
+  $justify: flex-start,
+  $gap: 0
+) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
@@ -23,6 +28,8 @@ $z-index-table: 100;
 #modal-atendimento {
   z-index: $z-index-table;
   border-radius: 1rem;
+  margin: 0 auto; 
+  padding: 1rem;
 }
 
 .atendimento-modal {
@@ -36,7 +43,7 @@ $z-index-table: 100;
 }
 
 .modal-content {
-  @include flexbox(column, stretch, flex-start, $spacing-unit);
+  @include flexbox(column, center, center, $spacing-unit);
 }
 
 .modal-body {
@@ -47,11 +54,11 @@ $z-index-table: 100;
 .lista-de-clientes {
   list-style: none;
   padding: 0;
-  @include flexbox(column, stretch, flex-start, $spacing-unit);
+  @include flexbox(column, center , center, $spacing-unit);
 
   li {
     width: $list-item-width;
-    @include flexbox(row, stretch, space-between);
+    @include flexbox(row, center, space-between);
 
     p {
       margin: 0;

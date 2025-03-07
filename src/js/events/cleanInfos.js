@@ -31,6 +31,15 @@ export function cleanInfos(cleanInfo){
     document.querySelector("#localizacao").value = "";
     document.querySelector("#alarme-equipamento").value = "";
 
+    document.querySelector("#canal-2g-alterado").checked = false;
+    document.querySelector("#modo-2g-alterado").checked = false;
+    document.querySelector("#largura-2g-alterado").checked = false;
+
+    document.querySelector("#canal-5g-alterado").checked = false;
+    document.querySelector("#modo-5g-alterado").checked = false;
+    document.querySelector("#largura-5g-alterado").checked = false;
+
+
     document.querySelector("#canal-2g-select-1").value = "";
     document.querySelector("#canal-2g-select-2").value = "";
     document.querySelector("#modo-2g-select-1").value = "";

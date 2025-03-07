@@ -8,18 +8,14 @@ const renderLogin = () => {
   container.classList.add("login-container");
 
   container.innerHTML = `
-    <div class="login-box">
-      <h2>Login</h2>
-      <form id="login-form">
-        <input type="text" id="username" placeholder="Usuário" required />
-        <input type="password" id="password" placeholder="Senha" required />
-        <button type="submit">Entrar</button>
-      </form>
-      <p id="error-message"></p>
-    </div>
+    <form class="login-form">
+      <input type="text" class="form-control" id="username" placeholder="Usuário" required>
+      <input type="password" class="form-control" id="password" placeholder="Senha" required>
+      <button type="submit" class="btn btn-success">Entrar</button>
+    </form>
   `;
 
-  container.querySelector("#login-form").addEventListener("submit", async (e) => {
+  container.querySelector(".login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;

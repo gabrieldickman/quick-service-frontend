@@ -1,4 +1,3 @@
-// Variáveis para configurações globais
 $spacing-unit: 1rem;
 $modal-width: 40rem;
 $list-item-width: 35rem;
@@ -6,53 +5,60 @@ $backdrop-color: rgba(0, 0, 0, 0.5);
 $z-index-backdrop: 1;
 $z-index-table: 100;
 
-@mixin flexbox($direction: row, $align: stretch, $justify: flex-start, $gap: null) {
+@mixin flexbox(
+  $direction: row,
+  $align: stretch,
+  $justify: flex-start,
+  $gap: 0
+) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
-  @if $gap {
-    gap: $gap;
-  }
+  gap: $gap;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#tabela-clientes, #modal-atendimento{
+#tabela-clientes,
+#modal-atendimento {
   z-index: $z-index-table;
+  border-radius: 1rem;
+  margin: 0 auto; 
+  padding: 1rem;
 }
 
-.atendimento-modal{
+.atendimento-modal {
   position: absolute;
   top: 1rem;
   padding: 0.5rem;
 }
 
-.modal-atendimento-content{
+.modal-atendimento-content {
   width: 25rem;
 }
 
-.modal-content{
-  @include flexbox(column, null, null, $spacing-unit);
+.modal-content {
+  @include flexbox(column, center, center, $spacing-unit);
 }
 
-.modal-body{
+.modal-body {
   @include flexbox(column, center);
   width: $modal-width;
 }
 
 .lista-de-clientes {
-  list-style-type: none;
-  @include flexbox(column, null, null, $spacing-unit);
+  list-style: none;
   padding: 0;
+  @include flexbox(column, center , center, $spacing-unit);
 
   li {
-    @include flexbox(row, null, space-between);
     width: $list-item-width;
+    @include flexbox(row, center, space-between);
 
     p {
       margin: 0;
@@ -64,10 +70,29 @@ body {
 
 .backdrop-activated {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: $backdrop-color;
   z-index: $z-index-backdrop;
+}
+
+@media screen and (max-width: 768px) {
+  #tabela-clientes {
+    width: 90%;
+  }
+
+  .modal-body {
+    width: 100%;
+  }
+
+  .lista-de-clientes {
+    width: 90%;
+
+    li {
+      width: 90%;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
 }

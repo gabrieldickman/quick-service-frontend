@@ -1,4 +1,3 @@
-// http://localhost:8000/opa/atendimento/?idAtendimento=
 import { getIdAtendimento } from "../services/fetchIDAtendimento";
 import { formatarTelefone } from "../utils/formatNumber";
 import { formatarData } from "../utils/formatDate";

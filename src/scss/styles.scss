@@ -1,9 +1,39 @@
 @use './modal';
 @use './notificacao';
 @use './login';
+@use './form';
+@use './checkboxs';
 
-#logout-btn{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+$bg-color: oklch(0.279 0.041 260.031);
+$text-color: oklch(0.869 0.022 252.894);
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text {
+  color: $text-color;
+}
+
+#logout-btn {
   position: absolute;
   top: 0.5rem;
   left: 0.5rem;
+}
+
+.search-client,
+.search-service-opa {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .search-client,
+  .search-service-opa {
+    flex-direction: column;
+  }
 }

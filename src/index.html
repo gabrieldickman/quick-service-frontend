@@ -16,8 +16,10 @@
     <!-- CABEÇALHO - CAMPOS DE BUSCA -->
     <header>
       <div class="container mt-4" id="titulo_pagina">
-        <p class="h3 text-center">ATENDIMENTO</p>
-        <button id="logout-btn" style="display: none" class="btn btn-danger">Sair</button>
+        <p class="h3 text-center text">ATENDIMENTO</p>
+        <button id="logout-btn" style="display: none" class="btn btn-danger">
+          Sair
+        </button>
       </div>
     </header>
 
@@ -28,16 +30,16 @@
         <div class="container busca_cliente">
           <form>
             <!-- BUSCAR CLIENTE -->
-            <div class="form-group mb-3">
+            <div class="form-group mb-3 search-client">
               <input
                 type="number"
                 class="form-control"
                 id="id_contrato"
                 placeholder="Insira o contrato do cliente para buscar informações..."
               />
-              <div class="d-grid mt-2">
+              <div class="d-grid">
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-secondary"
                   type="submit"
                   id="buscar_cliente"
                 >
@@ -63,16 +65,16 @@
             <!-- MODAL TABELA DE CLIENTES RETORNADOS - FIM -->
 
             <!-- BUSCAR ATENDIMENTO -->
-            <div class="form-group">
+            <div class="form-group search-service-opa">
               <input
                 type="text"
                 class="form-control"
                 id="protocolo-opa"
                 placeholder="Insira o protocolo do OPA para buscar informações..."
               />
-              <div class="d-grid mt-2">
+              <div class="d-grid">
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-secondary"
                   type="button"
                   id="buscar-id-atendimento"
                 >
@@ -86,7 +88,7 @@
 
         <section class="informacoes_atendimento">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO ATENDIMENTO</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO ATENDIMENTO</p>
           </div>
 
           <div class="container">
@@ -152,7 +154,7 @@
 
         <section class="informacoes_cliente">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO CLIENTE</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO CLIENTE</p>
           </div>
 
           <div class="container">
@@ -186,7 +188,7 @@
               <div class="form-group mb-3">
                 <label for="rede-lan-select">Rede LAN</label>
                 <select class="form-select" id="rede-lan-select">
-                  <option value=" ">Selecione</option>
+                  <option value="">Selecione</option>
                   <option value="ONT ZTE">ONT ZTE</option>
                   <option value="ONT STAVIX">ONT STAVIX</option>
                   <option value="ONU STAVIX">ONU STAVIX</option>
@@ -223,7 +225,7 @@
 
         <section class="informacoes_concentrador">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO CONCENTRADOR</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO CONCENTRADOR</p>
           </div>
 
           <div class="container">
@@ -278,7 +280,7 @@
 
         <section class="informacoes_chamado">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">INFORMAÇÕES DO CHAMADO</p>
+            <p class="h5 text-center text">INFORMAÇÕES DO CHAMADO</p>
           </div>
 
           <div class="container">
@@ -291,6 +293,35 @@
                   placeholder="Motivo do chamado"
                 />
               </div>
+              <div class="form-group mb-3">
+                <div class="input-group data" id="datepicker">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Data reservada"
+                    id="data-reservada"
+                  />
+                </div>
+              </div>
+              <div class="form-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="localizacao"
+                  placeholder="Localização do Cliente"
+                />
+              </div>
+
+              <div class="form-group mb-3">
+                <label for="alarme-equipamento">Alarme do Equipamento</label>
+                <select class="form-select" id="alarme-equipamento">
+                  <option value="">Selecione</option>
+                  <option value="LINK LOSS">LINK LOSS</option>
+                  <option value="DYING GASP">DYING GASP</option>
+                  <option value="BOARD ABORT">BOARD ABORT</option>
+                </select>
+              </div>
+
               <div class="form-group">
                 <label for="descricao_atendimento"
                   >Descrição do atendimento</label
@@ -299,8 +330,7 @@
                   class="form-control"
                   id="descricao_atendimento"
                   rows="10"
-                >
-                </textarea>
+                ></textarea>
               </div>
             </form>
           </div>
@@ -308,10 +338,10 @@
 
         <section class="metodos_aplicados_geral">
           <div class="container mt-4 mb-4">
-            <p class="h5 text-center">MÉTODOS APLICADOS NO EQUIPAMENTO</p>
+            <p class="h5 text-center text">MÉTODOS APLICADOS NO EQUIPAMENTO</p>
           </div>
 
-          <p class="h5 text-center mb-3">GERAL</p>
+          <p class="h5 text-center mb-3 text">GERAL</p>
 
           <div class="container">
             <form>
@@ -326,7 +356,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="atualizado-firmware-sim"
-                      value="sim"
+                      value="SIM"
                       checked
                     />
                     <label
@@ -341,7 +371,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="atualizado-firmware-nao"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label
                       class="form-check-label"
@@ -367,7 +397,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="limpeza-mac-sim"
-                      value="sim"
+                      value="SIM"
                       checked
                     />
                     <label class="form-check-label" for="limpeza-mac-sim"
@@ -380,7 +410,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="limpeza-mac-nao"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="limpeza-mac-nao"
                       >Não</label
@@ -404,7 +434,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="alterado-sntp-sim"
-                      value="sim"
+                      value="SIM"
                       checked
                     />
                     <label class="form-check-label" for="alterado-sntp"
@@ -417,7 +447,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="alterado-sntp-nao"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="alterado-sntp-nao"
                       >Não</label
@@ -441,7 +471,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="setado-dns-sim"
-                      value="sim"
+                      value="SIM"
                       checked
                     />
                     <label class="form-check-label" for="setad-dns-sim"
@@ -454,7 +484,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="setado-dns-nao"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="setad-dns-nao"
                       >Não</label
@@ -478,7 +508,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="habilitado-upnp-sim"
-                      value="sim"
+                      value="LIGADO"
                       checked
                     />
                     <label class="form-check-label" for="habilitado-upnp-sim"
@@ -491,7 +521,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="habilitado-upnp-nao"
-                      value="nao"
+                      value="DESLIGADO"
                     />
                     <label class="form-check-label" for="habilitado-upnp-nao"
                       >Desligado</label
@@ -515,7 +545,7 @@
                       type="radio"
                       name="firewall"
                       id="firewall-alto"
-                      value="alto"
+                      value="ALTO"
                       checked
                     />
                     <label class="form-check-label" for="firewall-alto"
@@ -528,7 +558,7 @@
                       type="radio"
                       name="firewall"
                       id="firewall-medio"
-                      value="medio"
+                      value="MÉDIO"
                     />
                     <label class="form-check-label" for="firewall-medio"
                       >Médio</label
@@ -540,7 +570,7 @@
                       type="radio"
                       name="firewall"
                       id="firewall-baixo"
-                      value="baixo"
+                      value="BAIXO"
                     />
                     <label class="form-check-label" for="firewall-baixo"
                       >Baixo</label
@@ -564,7 +594,7 @@
                       type="radio"
                       name="alg"
                       id="alg-ligado"
-                      value="ligado"
+                      value="LIGADO"
                       checked
                     />
                     <label class="form-check-label" for="alg">Ligado</label>
@@ -575,7 +605,7 @@
                       type="radio"
                       name="alg"
                       id="alg-desligado"
-                      value="desligado"
+                      value="DESLIGADO"
                     />
                     <label class="form-check-label" for="desligado"
                       >Desligado</label
@@ -588,7 +618,7 @@
         </section>
 
         <section class="metodos_aplicados_2g">
-          <p class="h5 text-center mt-3 mb-3">REDE 2.4G</p>
+          <p class="h5 text-center mt-3 mb-3 text">REDE 2.4G</p>
 
           <div class="container">
             <form>
@@ -604,7 +634,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="canal-2g-alterado"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="canal-2g-alterado"
                       >Não</label
@@ -612,7 +642,7 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="canal-2g-select-1">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="auto">auto</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -631,7 +661,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="canal-2g-select-2">
-                      <option value=" ">Para</option>
+                      <option value="">Para</option>
                       <option value="auto">auto</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -667,7 +697,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="modo-2g-alterado"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="modo-2g-alterado"
                       >Não</label
@@ -675,7 +705,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="modo-2g-select-1">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="B/G/N">B/G/N</option>
                       <option value="B/G/N/AC">B/G/N/AC</option>
                       <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
@@ -683,7 +713,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="modo-2g-select-2">
-                      <option value=" ">Para</option>
+                      <option value="">Para</option>
                       <option value="B/G/N">B/G/N</option>
                       <option value="B/G/N/AC">B/G/N/AC</option>
                       <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
@@ -707,7 +737,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="largura-2g-alterado"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="largura-2g-alterado"
                       >Não</label
@@ -715,7 +745,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="largura-2g-select-1">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="auto">auto</option>
                       <option value="20MHZ">20MHZ</option>
                       <option value="40MHZ">40MHZ</option>
@@ -747,7 +777,7 @@
                       type="radio"
                       name="sgi"
                       id="sgi-2g-ligado"
-                      value="ligado"
+                      value="LIGADO"
                       checked
                     />
                     <label class="form-check-label" for="sgi-2g-ligado"
@@ -760,7 +790,7 @@
                       type="radio"
                       name="sgi"
                       id="sgi-2g-desligado"
-                      value="desligado"
+                      value="DESLIGADO"
                     />
                     <label class="form-check-label" for="sgi-2g-desligado"
                       >Desligado</label
@@ -784,7 +814,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="enctriptacao-2g-alterada-sim"
-                      value="sim"
+                      value="SIM"
                       checked
                     />
                     <label
@@ -799,7 +829,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="enctriptacao-2g-alterada-nao"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label
                       class="form-check-label"
@@ -814,9 +844,9 @@
         </section>
 
         <section class="metodos_aplicados_5g">
-          <p class="h5 text-center mt-3 mb-3">REDE 5G</p>
+          <p class="h5 text-center mt-3 mb-3 text">REDE 5G</p>
 
-          <div class="container">
+          <div class="container canal">
             <form>
               <div class="row">
                 <div class="col">
@@ -830,7 +860,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="canal-5g-alterado"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="canal-5g-alterado"
                       >Não</label
@@ -838,7 +868,7 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="canal-5g-select-1">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="auto">auto</option>
                       <option value="36">36</option>
                       <option value="40">40</option>
@@ -860,7 +890,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="canal-5g-select-2">
-                      <option value=" ">Para</option>
+                      <option value="">Para</option>
                       <option value="auto">auto</option>
                       <option value="36">36</option>
                       <option value="40">40</option>
@@ -899,7 +929,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="modo-5g-alterado"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="modo-5g-alterado"
                       >Não</label
@@ -907,7 +937,7 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="modo-5g-select-1">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="B/G/N">B/G/N</option>
                       <option value="B/G/N/AC">B/G/N/AC</option>
                       <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
@@ -915,7 +945,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="modo-5g-select-2">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="B/G/N">B/G/N</option>
                       <option value="B/G/N/AC">B/G/N/AC</option>
                       <option value="B/G/N/AC/AX">B/G/N/AC/AX</option>
@@ -939,7 +969,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="largura-5g-alterado"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label class="form-check-label" for="largura-5g-alterado"
                       >Não</label
@@ -947,7 +977,7 @@
                   </div>
                   <div class="form-check form-check-inline mb-3">
                     <select class="form-select" id="largura-5g-select-1">
-                      <option value=" ">De</option>
+                      <option value="">De</option>
                       <option value="auto">auto</option>
                       <option value="20MHZ">20MHZ</option>
                       <option value="40MHZ">40MHZ</option>
@@ -957,7 +987,7 @@
                   </div>
                   <div class="form-check form-check-inline">
                     <select class="form-select" id="largura-5g-select-2">
-                      <option value=" ">Para</option>
+                      <option value="">Para</option>
                       <option value="auto">auto</option>
                       <option value="20MHZ">20MHZ</option>
                       <option value="40MHZ">40MHZ</option>
@@ -983,7 +1013,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="sgi-5g-ligado"
-                      value="ligado"
+                      value="LIGADO"
                       checked
                     />
                     <label class="form-check-label" for="sgi-5g-ligado"
@@ -996,7 +1026,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="sgi-5g-desligado"
-                      value="desligado"
+                      value="DESLIGADO"
                     />
                     <label class="form-check-label" for="sgi-5g-desligado"
                       >Desligado</label
@@ -1020,7 +1050,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="enctriptacao-5g-alterada-sim"
-                      value="sim"
+                      value="SIM"
                       checked
                     />
                     <label
@@ -1035,7 +1065,7 @@
                       type="radio"
                       name="inlineRadioOptions"
                       id="enctriptacao-5g-alterada-nao"
-                      value="nao"
+                      value="NÃO"
                     />
                     <label
                       class="form-check-label"
@@ -1052,7 +1082,7 @@
         <footer>
           <div class="text-end mt-3">
             <button
-              class="btn btn-primary"
+              class="btn btn-success"
               type="button"
               id="gerar-atendimento"
             >

@@ -5,7 +5,7 @@ const backendIp = process.env.REACT_APP_BACKEND_IP || 'localhost:8000';
 
 export async function getPlanoClient(planoCliente) {
   try {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
 
     const response = await axios.get(
       `https://${backendIp}/api/v1/cliente/plano/?idContrato=${planoCliente}`,{

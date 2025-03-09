@@ -39,7 +39,7 @@ searchService.addEventListener("click", (e) => {
 
 async function getAtendimento(idAtendimento) {
   try {
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
 
     const response = await axios.get(
       `https://${backendIp}/api/v1/opa/atendimento/?idAtendimento=${idAtendimento}`,{

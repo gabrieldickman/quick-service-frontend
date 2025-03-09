@@ -1,14 +1,14 @@
 const login = (token) => {
-  localStorage.setItem("token", token);
+  sessionStorage.setItem("token", token);
 };
 
 const isAuthenticated = () => {
-  return !!localStorage.getItem("token");
+  return !!sessionStorage.getItem("token");
 };
 
 const logout = () => {
-  localStorage.removeItem("token");
-  window.location.reload(); // Recarrega a página após logout
+  sessionStorage.removeItem("token");
+  window.location.reload();
 };
 
 export { login, isAuthenticated, logout };

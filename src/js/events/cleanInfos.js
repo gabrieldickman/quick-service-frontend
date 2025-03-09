@@ -1,6 +1,6 @@
 import { showNotification } from "../components/cleanNotification";
 
-export function cleanInfos(cleanInfo){
+export function cleanInfos(){
   cleanInfo.addEventListener("click", (e) => {
     e.preventDefault();
 

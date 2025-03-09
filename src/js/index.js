@@ -14,7 +14,7 @@ import renderLogin from "./components/Login.js";
 document.addEventListener("DOMContentLoaded", () => {
   const app = document.querySelector(".body");
   const logoutBtn = document.getElementById("logout-btn");
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
   if (token) {
     logoutBtn.style.display = "block"; 

@@ -9,8 +9,9 @@ const renderLogin = () => {
 
   container.innerHTML = `
     <form class="login-form">
-      <input type="text" class="form-control" id="username" placeholder="Usuário" required>
-      <input type="password" class="form-control" id="password" placeholder="Senha" required>
+      <h2> Login </h2>
+      <input type="text" class="form-control" id="username" placeholder="Usuário do AD" required>
+      <input type="password" class="form-control" id="password" placeholder="Senha do AD" required>
       <button type="submit" class="btn btn-success">Entrar</button>
     </form>
   `;

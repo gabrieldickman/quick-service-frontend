@@ -1,7 +1,7 @@
 import { login } from "../services/auth.js";
 import { showNotification } from "../components/errorNotification.js"
 
-const backendIp = process.env.REACT_APP_BACKEND_IP || 'localhost:8000';
+const backendIp = process.env.REACT_APP_BACKEND_IP;
 
 const renderLogin = () => {
   const container = document.createElement("div");
@@ -20,6 +20,7 @@ const renderLogin = () => {
     e.preventDefault();
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
+
 
     try {
       const response = await fetch(`https://${backendIp}/login`, {

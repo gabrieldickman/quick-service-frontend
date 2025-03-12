@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const webpack = require('webpack');
-
 module.exports = {
     mode: 'production', // Enable production optimizations
     entry: './src/js/index.js', // Entry point
@@ -73,9 +72,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css', // Extracted CSS
         }),
+
+        //TODO: Fix the env variable
         new webpack.DefinePlugin({
             'process.env': JSON.stringify({
-                REACT_APP_BACKEND_IP: process.env.REACT_APP_BACKEND_IP || 'localhost:8000',
+                REACT_APP_BACKEND_IP: process.env.REACT_APP_BACKEND_IP || 'service-api.brasildigital.net.br',
             }),
         }),
     ],

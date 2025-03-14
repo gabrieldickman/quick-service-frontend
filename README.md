@@ -1,4 +1,5 @@
-![image](https://github.com/gabrieldickman/quick-service-frontend/blob/master/src/img/image%201.svg)
+![image](https://github.com/gabrieldickman/quick-service-frontend/blob/master/src/img/login-screen.jpg)
+![image](https://github.com/gabrieldickman/quick-service-frontend/blob/master/src/img/main-screen.jpg)
 
 # QUICK SERVICE
 Sistema auxiliar de abertura de atendimentos.
